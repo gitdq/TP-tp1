@@ -25,7 +25,8 @@ Pour celà il faut installer dand l'image :
 
 2/ Build de l'image en donnant un nom:
 
-* docker build -t ci1 .
+* docker build -t --build-arg GIT_USER=<your_user> --build-arg GIT_TOKEN=d0e4467c63... --build-arg GIT_COMMIT=a14dc9f454... <your_image_name> .
+* sudo docker build --build-arg GIT_USER=xxx --build-arg GIT_PASS=xxxx --tag ci1 .
 
 Résultat:
 
