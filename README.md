@@ -30,7 +30,7 @@ Pour celà il faut installer dand l'image :
 
 3/ Rapatriment des codes manuel por test
 
-* se connecter au conteneur
+* se connecter au conteneur ==> à automatiser
 * git clone https://github.com/gitdq/TP-tp1.git ( voir comment ne pas ramener le README dans le conteneur)
 * npm install .
 * Lance ensuite npm start en passant les paramétres ==>  env PORT=8085 MSG="Hello world" npm start
