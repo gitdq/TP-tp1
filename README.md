@@ -28,5 +28,9 @@ Pour celà il faut installer dand l'image :
 * docker build -t --build-arg GIT_USER=<your_user> --build-arg GIT_TOKEN=d0e4467c63... --build-arg GIT_COMMIT=a14dc9f454... <your_image_name> .
 * sudo docker build --build-arg GIT_USER=xxx --build-arg GIT_PASS=xxxx --tag ci1 .
 
-Résultat:
+3/ Rapatriment des codes
+
+* git clone https://github.com/gitdq/TP-tp1.git ( voir comment ne pas ramener le README dans le conteneur)
+
+
 
