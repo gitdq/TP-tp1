@@ -6,9 +6,9 @@ Pour celà il faut installer dand l'image :
 - scp
 - tar
 
-Les opérations: Créaion d'image à l'aide Dockerfile
+1/ Les opérations: Créaion d'image à l'aide Dockerfile
 
-a. L'image de base Centos:latest
+* FROM Centos:latest
 * ARG GIT_USER
 * ARG GIT_PASS
 * FROM centos:latest
@@ -22,3 +22,10 @@ a. L'image de base Centos:latest
 * RUN yum install npm nodejs -y
 * RUN yum install scp -y
 * RUN yum install tar -y
+
+2/ Build de l'image en donnant un nom:
+
+* docker build -t ci1 .
+
+Résultat:
+
