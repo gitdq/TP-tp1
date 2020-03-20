@@ -6,19 +6,19 @@ Pour celà il faut installer dand l'image :
 - scp
 - tar
 
-Les opérations:
+Les opérations: Créaion d'image à l'aide Dockerfile
 
 a. L'image de base Centos:latest
-ARG GIT_USER
-ARG GIT_PASS
-FROM centos:latest
-ARG GIT_USER
-ARG GIT_PASS
+* ARG GIT_USER
+* ARG GIT_PASS
+* FROM centos:latest
+* ARG GIT_USER
+* ARG GIT_PASS
 
-RUN yum update
-RUN yum install -y epel-release
-RUN yum install -y git
+* RUN yum update
+* RUN yum install -y epel-release
+* RUN yum install -y git
 
-RUN yum install npm nodejs -y
-RUN yum install scp -y
-RUN yum install tar -y
+* RUN yum install npm nodejs -y
+* RUN yum install scp -y
+* RUN yum install tar -y
