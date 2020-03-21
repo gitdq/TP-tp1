@@ -1,4 +1,5 @@
-# TP1 L'objectif du TP est de construire une image qui sera servie pour récupérer le code source et de pourvoir builder pour ensuite obtenir un livrable compressé via un outil (cette partie doit ête réalisée viaa l'image docker). 
+# TP1 test1 : L'objectif 
+
 Pour celà il faut installer dand l'image :
 
 - git
@@ -29,5 +30,37 @@ Pour celà il faut installer dand l'image :
 * Lance ensuite npm start en passant les paramétres ==>  env PORT=8085 MSG="Hello world" npm start
 * passer en background : Ctrl+z puis bg (pour revenir en fordground : fg)
 * Pour tester, lancer un curl ==> curl -X GET http://localhost:8085
+*******************************************************************************************************************************
 
+*******************************************************************************************************************************
 
+TP1 Test 2 :
+
+Contenu du fichier Dockerfile:
+
+FROM centos:latest
+ARG GIT_USER
+ARG GIT_PASS
+
+RUN yum install git -y \
+&& yum install npm nodejs -y \
+&& yum install tar -y \
+&& git clone https://github.com/gitdq/TP-tp1 (ici on clone
+
+WORKDIR TP-tp1 ==> se positionner sur le répertoire de travail dans le conteneur
+
+RUN npm install ==> chargement de modules (des dépendances)
+
+CMD env PORT=8085 MSG="Hello world" npm start ==> démarrage de l'application en passant les paramétres à l'appli server.js
+******************
+
+Lancer le build en passant les paramétre (GIT_USER=Xxxx --build-arg GIT_PASS=Xxxx) définis dans l'image et tagger l'image au nom "ci1" : ==> sudo docker build --build-arg GIT_USER=Xxxx --build-arg GIT_PASS=Xxxx --tag ci1 .
+
+*******************
+
+==> Instancier un conteneur (nom du conteneur "test" )  avec l'image "ci1" en mappant le port de l'appli "8085" au port d'hôte "8080", celui-ci permet d'accéder à l'application à partir de l'hôte:
+
+==> docker run -d -p 8080:8085 --name test ci1
+==> teste d'accès à l'appli : 
+    ==> [vagrant@localhost create_image]$ curl -X GET http://localhost:8080
+        Résultat: Hello world
