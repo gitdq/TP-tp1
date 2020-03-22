@@ -39,6 +39,7 @@ TP1 Test 2 :
 Contenu du fichier Dockerfile:
 
 FROM centos:latest
+
 ARG GIT_USER
 ARG GIT_PASS
 
