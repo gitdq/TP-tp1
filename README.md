@@ -41,7 +41,6 @@ Contenu du fichier Dockerfile:
 FROM centos:latest
 
 ARG GIT_USER
-
 ARG GIT_PASS
 
 RUN yum install git -y \
